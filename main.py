@@ -4,12 +4,9 @@ from config import *
 from performer import *
 
 def on_message(channel, method_frame, header_frame, body):
-    try:
-        data = json.loads(body)
-    except:
-        data = body.decode("utf-8")
-
-    send_to_queve(perform(data))
+    body = json.loads(body)
+    body["NAME"] = perform(body["NAME"])
+    send_to_queve(body)
     LOG.info(f'Message "{data}" has been sent')
 
     channel.basic_ack(delivery_tag=method_frame.delivery_tag)
