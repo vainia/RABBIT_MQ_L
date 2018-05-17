@@ -5,10 +5,9 @@ from performer import *
 
 def on_message(channel, method_frame, header_frame, body):
     body = json.loads(body)
-    body["NAME"] = perform(body["NAME"])
+    send = body["NAME"] = perform(body["NAME"])
     send_to_queve(body)
-    LOG.info(f'Message "{data}" has been sent')
-
+    LOG.info(f'Message "{send}" has been sent')
     channel.basic_ack(delivery_tag=method_frame.delivery_tag)
 
 def send_to_queve(data):
