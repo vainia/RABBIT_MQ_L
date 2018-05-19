@@ -43,8 +43,8 @@ SET = {
     'server':'0.0.0.0', #rabbit-mq server ip adres
     'name':'user_name', #name required for connection to server
     'passwd':'user_password', #password required for connection to server
-    'queue_current':'RMQ-H-E', #name of the current queue, where initial JSON being preserved
-    'queue_above':'RMQ-E-L' #name of the next queue, where JSON sends after processing
+    'queue_current':'RMQ-L-W', #name of the current queue, where initial JSON being preserved
+    'queue_above':'RMQ-W-USER' #name of the next queue, where JSON sends after processing
 }
 ```
 
